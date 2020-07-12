@@ -1,10 +1,8 @@
-newpage()
-        {
+#!bin/bash
 	clear
 	mkdir -p images && cp -v *.{png,jpg,jpeg,gif,tiff} images/.
 	cp -v index.html{,.bak_$(date +%F)}
         echo "<img src=images/$1 /img>" >> index.html
 	echo "<p>$(date +%F) </p>" >> index.html
 	echo -e "<p><em>  $2  </em></p>" >> index.html
-        }
- 
+done
