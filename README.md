@@ -3,3 +3,6 @@
 and let it do the rest. 
 
 #newpage imagefile.extension "Description".
+
+Here's an example
+<img src="image.png">
