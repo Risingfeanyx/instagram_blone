@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 	clear
 	mkdir -p images && cp -v *.{png,jpg,jpeg,gif,tiff} images/.
 	cp -v index.html{,.bak_$(date +%F)}
