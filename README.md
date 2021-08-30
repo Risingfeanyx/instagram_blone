@@ -13,16 +13,16 @@ Replaced using read/asks for descriptions of each image
 ```
 image_2()
 {
+  clear
   mkdir -p images.$(date +%F)
+  echo "<a href="images.$(date +%F)/">$(date +%F)</a>" >> index.html
   cp -v *.{png,jpg,jpeg,gif,tiff} images.$(date +%F)/
   cd images.$(date +%F)
   for i in *
   do 
   read -rp "tell me about $i" descriptor
-  echo "<p>$(date +%F)</p>" >> ../index.html
-  echo "<img src=images.$(date +%F)/$i /img>" >> ../index.html
-  echo "<p>$(date +%F)</p>" >> ../index.html
-  echo -e "<p><em>  $descriptor  </em></p>" >> ../index.html
+  echo "<img src=$i /img>" >> index.html
+  echo -e "<p><em>  $descriptor  </em></p>" >> index.html
 done
   cd ..
 }
