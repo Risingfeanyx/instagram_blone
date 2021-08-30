@@ -7,3 +7,23 @@ and let it do the rest.
 
 Here's an example
 <img src="image.png">
+
+Replaced using read/asks for descriptions of each image
+
+```
+image_2()
+{
+  mkdir -p images.$(date +%F)
+  cp -v *.{png,jpg,jpeg,gif,tiff} images.$(date +%F)/
+  cd images.$(date +%F)
+  for i in *
+  do 
+  read -rp "tell me about $i" descriptor
+  echo "<p>$(date +%F)</p>" >> ../index.html
+  echo "<img src=images.$(date +%F)/$i /img>" >> ../index.html
+  echo "<p>$(date +%F)</p>" >> ../index.html
+  echo -e "<p><em>  $descriptor  </em></p>" >> ../index.html
+done
+  cd ..
+}
+```
